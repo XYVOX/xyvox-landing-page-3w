@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Github, Linkedin } from "lucide-react";
+import Image from "next/image";
 
 export function Footer() {
   return (
@@ -19,7 +20,15 @@ export function Footer() {
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           {/* Logo + Copyright */}
           <div className="flex items-center gap-3">
-            <div className="w-6 h-6 bg-gradient-to-br from-[#8b5cf6] to-[#a78bfa] rotate-45 rounded-sm" />
+            <div className="relative w-7 h-7">
+              <Image
+                src="/logo.png"
+                alt="XYVOX logo"
+                width={28}
+                height={28}
+                className="object-contain"
+              />
+            </div>
             <span className="font-heading text-sm font-bold tracking-wider text-[#6a6a8a]">
               XYVOX
             </span>

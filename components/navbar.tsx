@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
+import Image from "next/image";
 
 const navLinks = [
   { label: "Ecosystem", href: "#ecosystem" },
@@ -34,9 +35,15 @@ export function Navbar() {
       <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
         {/* Logo */}
         <a href="#" className="flex items-center gap-2 group">
-          <div className="relative">
-            <div className="w-8 h-8 bg-gradient-to-br from-[#8b5cf6] to-[#a78bfa] rotate-45 rounded-sm group-hover:shadow-[0_0_20px_rgba(139,92,246,0.6)] transition-shadow duration-300" />
-            <div className="absolute inset-0 w-8 h-8 bg-gradient-to-br from-[#00dcff]/30 to-transparent rotate-45 rounded-sm" />
+          <div className="relative w-10 h-10 group-hover:drop-shadow-[0_0_12px_rgba(139,92,246,0.6)] transition-all duration-300">
+            <Image
+              src="/logo.png"
+              alt="XYVOX logo"
+              width={40}
+              height={40}
+              className="object-contain"
+              priority
+            />
           </div>
           <span className="font-heading text-xl font-bold tracking-wider text-white text-glow-violet">
             XYVOX

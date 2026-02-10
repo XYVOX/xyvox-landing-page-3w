@@ -1,0 +1,138 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 0%;
+    --foreground: 270 10% 92%;
+    --card: 270 10% 4%;
+    --card-foreground: 270 10% 92%;
+    --popover: 270 10% 4%;
+    --popover-foreground: 270 10% 92%;
+    --primary: 270 100% 65%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 270 15% 12%;
+    --secondary-foreground: 270 10% 92%;
+    --muted: 270 10% 10%;
+    --muted-foreground: 270 10% 55%;
+    --accent: 185 100% 55%;
+    --accent-foreground: 0 0% 0%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 270 30% 18%;
+    --input: 270 20% 14%;
+    --ring: 270 100% 65%;
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 3%;
+    --sidebar-foreground: 270 10% 92%;
+    --sidebar-primary: 270 100% 65%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 270 15% 12%;
+    --sidebar-accent-foreground: 270 10% 92%;
+    --sidebar-border: 270 30% 18%;
+    --sidebar-ring: 270 100% 65%;
+
+    --chart-1: 270 100% 65%;
+    --chart-2: 185 100% 55%;
+    --chart-3: 280 80% 70%;
+    --chart-4: 200 100% 60%;
+    --chart-5: 260 90% 75%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Custom glow utilities */
+@layer utilities {
+  .glow-violet {
+    box-shadow:
+      0 0 15px rgba(139, 92, 246, 0.3),
+      0 0 45px rgba(139, 92, 246, 0.15),
+      inset 0 0 15px rgba(139, 92, 246, 0.05);
+  }
+
+  .glow-violet-intense {
+    box-shadow:
+      0 0 20px rgba(139, 92, 246, 0.5),
+      0 0 60px rgba(139, 92, 246, 0.25),
+      0 0 100px rgba(139, 92, 246, 0.1),
+      inset 0 0 20px rgba(139, 92, 246, 0.1);
+  }
+
+  .glow-cyan {
+    box-shadow:
+      0 0 15px rgba(0, 220, 255, 0.3),
+      0 0 45px rgba(0, 220, 255, 0.15);
+  }
+
+  .text-glow-violet {
+    text-shadow:
+      0 0 10px rgba(139, 92, 246, 0.5),
+      0 0 30px rgba(139, 92, 246, 0.3),
+      0 0 60px rgba(139, 92, 246, 0.15);
+  }
+
+  .text-glow-cyan {
+    text-shadow:
+      0 0 10px rgba(0, 220, 255, 0.5),
+      0 0 30px rgba(0, 220, 255, 0.3);
+  }
+
+  .glass-panel {
+    background: linear-gradient(
+      135deg,
+      rgba(139, 92, 246, 0.08) 0%,
+      rgba(0, 0, 0, 0.4) 50%,
+      rgba(139, 92, 246, 0.05) 100%
+    );
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(139, 92, 246, 0.2);
+  }
+
+  .crystal-border {
+    border: 1px solid rgba(139, 92, 246, 0.3);
+    background: linear-gradient(
+      145deg,
+      rgba(139, 92, 246, 0.06) 0%,
+      rgba(0, 0, 0, 0.6) 40%,
+      rgba(139, 92, 246, 0.04) 100%
+    );
+  }
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #000000;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(139, 92, 246, 0.3);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(139, 92, 246, 0.5);
+}
+
+/* Selection color */
+::selection {
+  background: rgba(139, 92, 246, 0.4);
+  color: #ffffff;
+}

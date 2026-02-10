@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import React from "react";
 
 /* ─── SVG Wireframe Crystal ─── */
 function WireframeCrystal({
@@ -318,6 +319,13 @@ function FloatingParticle({
 }
 
 export function Hero() {
+
+  const [mounted, setMounted] = React.useState(false);
+
+  React.useEffect(() => {
+    setMounted(true);
+  }, []);
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#000000]">
       {/* Deep background radial glow */}
@@ -406,13 +414,13 @@ export function Hero() {
           <EnergyLine x1="50%" y1="58%" x2="58%" y2="80%" delay={3.5} />
 
           {/* Floating particles */}
-          {Array.from({ length: 16 }).map((_, i) => (
-            <FloatingParticle
-              key={i}
-              delay={i * 0.4}
-              x={(Math.random() - 0.5) * 70}
-              y={(Math.random() - 0.5) * 50}
-            />
+          {mounted && Array.from({ length: 16 }).map((_, i) => (
+              <FloatingParticle
+                  key={i}
+                  delay={i * 0.4}
+                  x={(Math.random() - 0.5) * 70}
+                  y={(Math.random() - 0.5) * 50}
+              />
           ))}
         </div>
       </div>

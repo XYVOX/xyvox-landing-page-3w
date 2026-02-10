@@ -26,7 +26,7 @@ export function Navbar() {
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${
         scrolled
           ? "bg-[#000000]/80 backdrop-blur-xl border-b border-[#8b5cf6]/20"
           : "bg-transparent"
@@ -64,19 +64,6 @@ export function Navbar() {
           ))}
         </div>
 
-        {/* CTA */}
-        <div className="hidden md:block">
-          <button
-            type="button"
-            className="relative px-6 py-2.5 font-heading text-sm font-semibold tracking-wide text-white rounded-lg overflow-hidden group cursor-pointer"
-          >
-            <div className="absolute inset-0 bg-gradient-to-r from-[#8b5cf6] to-[#a78bfa] opacity-90 group-hover:opacity-100 transition-opacity duration-300" />
-            <div className="absolute inset-0 bg-gradient-to-r from-[#8b5cf6] to-[#00dcff] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-[0_0_30px_rgba(139,92,246,0.6),0_0_60px_rgba(139,92,246,0.3)]" />
-            <span className="relative z-10">Launch App</span>
-          </button>
-        </div>
-
         {/* Mobile Toggle */}
         <button
           type="button"
@@ -109,12 +96,7 @@ export function Navbar() {
                   {link.label}
                 </a>
               ))}
-              <button
-                type="button"
-                className="mt-2 px-6 py-2.5 font-heading text-sm font-semibold text-white bg-gradient-to-r from-[#8b5cf6] to-[#a78bfa] rounded-lg"
-              >
-                Launch App
-              </button>
+
             </div>
           </motion.div>
         )}

@@ -6,7 +6,7 @@ import Image from "next/image";
 
 export function Footer() {
   return (
-    <footer id="footer" className="relative py-12 bg-[#000000]">
+    <footer id="footer" className="relative py-12 bg-[#000000] overflow-hidden">
       {/* Top divider */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[80%] max-w-3xl h-px bg-gradient-to-r from-transparent via-[#8b5cf6]/20 to-transparent" />
 
@@ -40,7 +40,7 @@ export function Footer() {
           {/* Social links */}
           <div className="flex items-center gap-4">
             <a
-              href="https://github.com"
+              href="https://github.com/XYVOX"
               target="_blank"
               rel="noopener noreferrer"
               className="p-2.5 rounded-xl border border-[#1a1a2e] bg-[#08080f] text-[#5a5a7a] hover:text-white hover:border-[#8b5cf6]/40 hover:bg-[#0c0c18] transition-all duration-300 hover:shadow-[0_0_20px_rgba(139,92,246,0.15)]"
@@ -49,7 +49,7 @@ export function Footer() {
               <Github size={18} />
             </a>
             <a
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/company/xyvox"
               target="_blank"
               rel="noopener noreferrer"
               className="p-2.5 rounded-xl border border-[#1a1a2e] bg-[#08080f] text-[#5a5a7a] hover:text-white hover:border-[#8b5cf6]/40 hover:bg-[#0c0c18] transition-all duration-300 hover:shadow-[0_0_20px_rgba(139,92,246,0.15)]"

@@ -13,10 +13,11 @@ const projects = [
     icon: Activity,
     gradient: "from-[#8b5cf6] to-[#6d28d9]",
     tag: "Production",
-    image: "/projects/spreads.jpg", // Путь к картинке в папке public
+    image: "/projects/spreads.jpg",
+    link: "https://spreads.xyvox.xyz",
   },
   {
-    title: "XYVOX Memes",
+    title: "XYVOX Memecoins",
     subtitle: "On-Chain Analytics",
     description:
         "An advanced ingestion pipeline designed for the Solana ecosystem. It utilizes high-throughput indexing to track wallet clusters, liquidity flows, and token creation events, providing institutional-grade insights for volatile assets.",
@@ -47,6 +48,7 @@ function ProjectCard({
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true, margin: "-80px" });
   const Icon = project.icon;
+  const CardWrapper = project.link ? 'a' : 'div';
 
   return (
       <motion.div
@@ -64,6 +66,12 @@ function ProjectCard({
           }}
           className="group relative flex flex-col h-full"
       >
+        <CardWrapper
+            href={project.link}
+            target={project.link ? "_blank" : undefined}
+            rel="noopener noreferrer"
+            className={`relative flex flex-col h-full ... ${project.link ? 'cursor-pointer' : ''}`}
+        >
         {/* Card outer glow on hover */}
         <div className="absolute -inset-px rounded-2xl bg-gradient-to-b from-[#8b5cf6]/0 via-[#8b5cf6]/0 to-[#8b5cf6]/0 group-hover:from-[#8b5cf6]/40 group-hover:via-[#8b5cf6]/20 group-hover:to-[#00dcff]/30 transition-all duration-500 blur-sm" />
 
@@ -130,6 +138,7 @@ function ProjectCard({
 
           </div>
         </div>
+        </CardWrapper>
       </motion.div>
   );
 }

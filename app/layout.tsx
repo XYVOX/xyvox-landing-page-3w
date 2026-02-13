@@ -1,6 +1,7 @@
 import React from "react"
 import type { Metadata } from "next";
 import { Space_Grotesk, Inter } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next"
 
 import "./globals.css";
 
@@ -33,6 +34,7 @@ export default function RootLayout({
     <html lang="en" className={`${spaceGrotesk.variable} ${inter.variable}`}>
       <body className="font-sans antialiased bg-[#000000] text-foreground overflow-x-hidden">
         {children}
+        <Analytics />
       </body>
     </html>
   );
